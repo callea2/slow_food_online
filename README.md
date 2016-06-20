@@ -1,4 +1,4 @@
-[![BuildStatus](https://travis-ci.org/CraftAcademy/slow_food_online.svg?branch=development)](https://travis-ci.org/CraftAcademy/slow_food_online) 
+[![BuildStatus](https://travis-ci.org/CraftAcademy/slow_food_online.svg?branch=development)](https://travis-ci.org/CraftAcademy/slow_food_online)
 [![CoverageStatus](https://coveralls.io/repos/github/CraftAcademy/slow_food_online/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/slow_food_online?branch=development)
 
 #What is Slow Food Online?
@@ -11,29 +11,29 @@ interactive and well designed food ordering services here in the [Kingdom of Swe
 For this project we've used a bunch of quality tools and technologies which have aided us in the creation
 and delivery of this project.
 
-Language:
+**Language**:
 * [Ruby](https://www.ruby-lang.org/)
 
-Frameworks:
+**Frameworks**:
 * [Ruby on Rails](http://rubyonrails.org/)
 
-Planning:
+**Planning**:
 * [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1609537)
 
-Template engine:
+**Template engine**:
 * [Haml](http://haml.info/)
 
-Database:
+**Database**:
 * [PostgreSQL](https://www.postgresql.org/)
 
-Testing:
+**Testing**:
 * [RSpec](http://rspec.info/)
 * [Cucumber](https://cucumber.io/)
 * [Coveralls](https://coveralls.io/)
 * [Travis CI](https://travis-ci.org/)
 
 ## Collaborators
-Core team:
+**Core team**: 
 [Yan](https://github.com/flamesoft), [Daniel](https://github.com/DanielitoAlbinsson), [Carl-Philip](https://github.com/callea2)
 
 
