@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/CraftAcademy/slow_food_online.svg?branch=development)](https://travis-ci.org/CraftAcademy/slow_food_online)
-[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/slow_food_online/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/slow_food_online?branch=development)
+[![BuildStatus](https://travis-ci.org/CraftAcademy/slow_food_online.svg?branch=development)](https://travis-ci.org/CraftAcademy/slow_food_online) 
+[![CoverageStatus](https://coveralls.io/repos/github/CraftAcademy/slow_food_online/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/slow_food_online?branch=development)
 
 #What is Slow Food Online?
 
