@@ -20,6 +20,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'coveralls', require: false
   gem 'simplecov', git: 'https://github.com/colszowka/simplecov'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :development do

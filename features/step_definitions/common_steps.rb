@@ -22,3 +22,22 @@ end
 When(/^I select "([^"]*)" from "([^"]*)"$/) do |value, field|
   select(value, :from => field)
 end
+
+
+Given(/^the following categories exist$/) do |table|
+  table.hashes.each do |category|
+    FactoryGirl.create(:restaurant_category, title: category[:title])
+  end
+
+end
+
+Given(/^the following restaurants exist$/) do |table|
+  table.hashes.each do |restaurant|
+    category = RestaurantCategory.find_by(title: restaurant[:category])
+    FactoryGirl.create(:restaurant, name: restaurant[:name], restaurant_category: category)
+  end
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end

@@ -1,42 +1,6 @@
 %h1 What do you feel like tonight?
 %div
   %p Choose category
-  %select{id: "category"}
-    %option{disabled: "", hidden: "", selected: "", style: "display: none", value: ""}
-    %option{value: "french"} French
-    %option{value: "thai"} Thai
-    %option{value: "japanese"} Japanese
-    %option{value: "italian"} Italian
-    %option{value: "american"} American
-.french.box
-  You have selected
-  %strong French,
-  show restaurants here
-.thai.box
-  You have selected
-  %strong Thai,
-  show restaurants here
-.japanese.box
-  You have selected
-  %strong Japanese,
-  show restaurants here
-.italian.box
-  You have selected
-  %strong Italian,
-  show restaurants here
-.american.box
-  You have selected
-  %strong American,
-  show restaurants here
-
-
-   <% if @restaurant_categories.any? %>
-    <p>Choose category</p>
-      <select id="category">
-        <% @restaurant_categories.each do |res_cat| %>
-          <option value = "<%= res_cat.id%>"><%= res_cat.title%></option>
-        <% end %>
-      </select>
-  <% else %>
-    <p>No categories in the system</p>
-  <% end %>
+  = form_tag do
+    = select_tag(:category, options_for_select(categories_for_select))
+  #selection
