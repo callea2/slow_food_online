@@ -28,3 +28,15 @@
   You have selected
   %strong American,
   show restaurants here
+
+
+   <% if @restaurant_categories.any? %>
+    <p>Choose category</p>
+      <select id="category">
+        <% @restaurant_categories.each do |res_cat| %>
+          <option value = "<%= res_cat.id%>"><%= res_cat.title%></option>
+        <% end %>
+      </select>
+  <% else %>
+    <p>No categories in the system</p>
+  <% end %>
