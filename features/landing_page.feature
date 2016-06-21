@@ -20,10 +20,13 @@ Feature: As a visitor
     Then I should see "What do you feel like tonight?"
 
   @javascript
-  Scenario:
+  Scenario: Choose Samoan
     Given I am on the "home page"
     When I select "Samoan" from "category"
     Then I should see "You have selected Samoan"
-  #  And I click "Send"
+    Then show me the page
+    And I click "Send"
     And I should see "Calles Kitchen"
     And I should see "Pizza Place"
+    Then show me the page
+

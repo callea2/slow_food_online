@@ -12,7 +12,7 @@ gem 'devise'
 gem 'cancancan'
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'

@@ -1,11 +1,10 @@
 class LandingController < ApplicationController
   def index
     @restaurant_categories = RestaurantCategory.all
+    @restaurants = Restaurant.where(restaurant_category: params[:category]) if params[:category]
   end
 
   def search_restaurants
-    @restaurants = Restaurant.where(category: params[:category])
-    binding.pry
-    redirect_to :index
+    redirect_to action: :index, category: params[:category]
   end
 end
