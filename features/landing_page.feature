@@ -24,9 +24,14 @@ Feature: As a visitor
     Given I am on the "home page"
     When I select "Samoan" from "category"
     Then I should see "You have selected Samoan"
-    Then show me the page
     And I click "Send"
     And I should see "Calles Kitchen"
     And I should see "Pizza Place"
-    Then show me the page
 
+  @javascript
+  Scenario: Choose Chinese
+    Given I am on the "home page"
+    When I select "Chinese" from "category"
+    Then I should see "You have selected Chinese"
+    And I click "Send"
+    And I should see "China Palace"
