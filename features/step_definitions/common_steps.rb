@@ -41,3 +41,7 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+Then(/^I click "([^"]*)"$/) do |value|
+  click_link_or_button(value)
+end

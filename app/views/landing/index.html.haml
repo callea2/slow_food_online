@@ -1,6 +1,7 @@
 %h1 What do you feel like tonight?
 %div
   %p Choose category
-  = form_tag do
-    = select_tag(:category, options_for_select(categories_for_select))
+  = form_tag(search_restaurants_path) do
+    = select_tag(:category, options_for_select(categories_for_select), onchange: "this.form.submit();")
+  = # submit_tag 'Send'
   #selection
