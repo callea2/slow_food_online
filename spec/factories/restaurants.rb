@@ -7,5 +7,6 @@ FactoryGirl.define do
     org_number '909090-1234'
     active true
     association :restaurant_category
+    association :user
   end
 end

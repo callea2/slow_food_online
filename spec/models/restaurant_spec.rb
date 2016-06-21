@@ -18,12 +18,12 @@ RSpec.describe Restaurant, type: :model do
 
   describe 'Relationships' do
     it {is_expected.to belong_to :restaurant_category}
+    it {is_expected.to belong_to :user}
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_presence_of(:restaurant_category) }
-
   end
 end
