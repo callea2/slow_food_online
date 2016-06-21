@@ -1,0 +1,26 @@
+$(document).ready(function(){
+        $("select").change(function(){
+            $( "select option:selected").each(function(){
+                if($(this).attr("value")=="french"){
+                    $(".box").hide();
+                    $(".french").show();
+                }
+                if($(this).attr("value")=="thai"){
+                    $(".box").hide();
+                    $(".thai").show();
+                }
+                if($(this).attr("value")=="japanese"){
+                    $(".box").hide();
+                    $(".japanese").show();
+                }
+                if($(this).attr("value")=="italian"){
+                    $(".box").hide();
+                    $(".italian").show();
+                }
+                if($(this).attr("value")=="american"){
+                    $(".box").hide();
+                    $(".american").show();
+                }
+            });
+        })
+    });
