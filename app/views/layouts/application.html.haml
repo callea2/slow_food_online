@@ -1,8 +1,15 @@
 %html
 %head
   %title SlowFoodOnline
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  = yield
+  = render partial: 'layouts/header'
+  .row
+    = yield
+  = render partial: 'layouts/footer'
+  = javascript_include_tag 'http://cdn.foundation5.zurb.com/foundation.js'
+  :javascript
+    $(function(){ $(document).foundation(); });
