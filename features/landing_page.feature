@@ -35,3 +35,7 @@ Feature: As a visitor
     Then I should see "You have selected Chinese"
     And I click "Send"
     And I should see "China Palace"
+
+  Scenario: See map
+    Given I am on the "home page"
+    Then I should see the "map"

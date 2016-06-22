@@ -10,6 +10,7 @@ gem 'faker'
 gem 'haml-rails' #Template engine
 gem 'devise'
 gem 'cancancan'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry-rails'
