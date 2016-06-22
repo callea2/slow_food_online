@@ -9,6 +9,8 @@ cache:
 addons:
   postgresql: '9.4'
 before_install:
+  - npm install -g bower
+  - bower install
   - sudo apt-get update -qq
   - sudo apt-get install -qq postgresql-server-dev-9.4 libpq-dev
 before_script:
