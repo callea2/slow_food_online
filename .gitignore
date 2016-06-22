@@ -8,4 +8,3 @@
 capybara-*.html
 coverage
 vendor/assets/bower_components/
-/config/application.yml
