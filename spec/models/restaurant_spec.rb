@@ -14,6 +14,8 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to have_db_column :address }
     it { is_expected.to have_db_column :phone }
     it { is_expected.to have_db_column :org_number }
+    it { is_expected.to have_db_column :lon }
+    it { is_expected.to have_db_column :lat }
   end
 
   describe 'Relationships' do
@@ -26,4 +28,5 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_presence_of(:restaurant_category) }
   end
+
 end
