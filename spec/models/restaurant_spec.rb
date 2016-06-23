@@ -29,4 +29,16 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to validate_presence_of(:restaurant_category) }
   end
 
+  describe '#full_street_address' do
+    subject do
+      FactoryGirl.create(:restaurant,
+      name: 'Operakällaren',
+      address: 'Karl XII:s torg, 111 86 Stockholm' )
+    end
+
+    it 'returns full address' do
+      expect(subject.full_street_address).to eq 'Karl XII:s torg, 111 86 Stockholm'
+    end
+  end
+
 end

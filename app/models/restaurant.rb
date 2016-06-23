@@ -6,4 +6,11 @@ class Restaurant < ActiveRecord::Base
   validates_uniqueness_of :name
 
   validates_presence_of :restaurant_category
+
+  geocoded_by :full_street_address
+  after_validation :geocode
+
+  def full_street_address
+    self.address
+  end
 end
