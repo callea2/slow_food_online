@@ -10,10 +10,10 @@ Feature: As a visitor
       | Chinese |
 
     Given the following restaurants exist
-      | name           | category |
-      | Calles Kitchen | Samoan   |
-      | Pizza Place    | Samoan   |
-      | China Palace   | Chinese  |
+      | name           | category | latitude   | longitude  |
+      | Calles Kitchen | Samoan   | 59.3716664 | 18.2061587 |
+      | Pizza Place    | Samoan   | 59.1159593 | 18.2529808 |
+      | China Palace   | Chinese  | 59.0111555 | 18.3138833 |
 
   Scenario:
     Given I am on the "home page"
@@ -37,6 +37,7 @@ Feature: As a visitor
   Scenario: See map
     Given I am on the "home page"
     Then I should see the "map"
+    And I should see "3" markers
 
   Scenario: Display address input
     Given I am on the "home page"

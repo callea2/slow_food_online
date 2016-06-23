@@ -34,7 +34,12 @@ end
 Given(/^the following restaurants exist$/) do |table|
   table.hashes.each do |restaurant|
     category = RestaurantCategory.find_by(title: restaurant[:category])
-    FactoryGirl.create(:restaurant, name: restaurant[:name], restaurant_category: category)
+    rest = FactoryGirl.build(:restaurant,
+    name: restaurant[:name],
+    restaurant_category: category,
+    latitude: restaurant[:latitude],
+    longitude: restaurant[:longitude])
+    rest.save(validate: false)
   end
 end
 
@@ -75,3 +80,6 @@ Then(/^I should be on the show page for "([^"]*)"$/) do |name|
   expect(page.current_path).to eq restaurant_path(restaurant)
 end
 
+Then(/^I should see "([^"]*)" markers$/) do |count|
+  expect(page).to have_selector('#markers img', count: count)
+end
