@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160623113405) do
     t.datetime "updated_at",                            null: false
     t.text     "description"
     t.integer  "user_id"
-    t.float    "lat"
-    t.float    "lon"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "restaurants", ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id", using: :btree

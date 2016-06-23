@@ -12,10 +12,14 @@ def create_restaurant(args = {})
   description = args[:description] || Faker::Lorem.paragraph(2)
   address = args[:address] || [Faker::Address.street_address, Faker::Address.postcode, Faker::Address.city].join(', ')
   phone_number = args[:phone] || Faker::PhoneNumber.cell_phone
-
-  Restaurant.create(name: name,
+  lat = rand(59.0000001..59.4000009).round(7)
+  lon = rand(18.0000001..18.4000009).round(7)
+  rest = Restaurant.new(name: name,
                     description: description,
                     address: address,
                     phone: phone_number,
-                    restaurant_category: cat)
+                    restaurant_category: cat,
+                    latitude: lat,
+                    longitude: lon)
+  rest.save(validate: false)
 end
