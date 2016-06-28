@@ -14,7 +14,7 @@ Feature: As a visitor
     And I fill in "Email" with "visitor@gmail.com"
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
-    And I click "Sign up"
+    And I click "Register"
     Then I should be on the "home page"
 
   Scenario: A visitor cannot register with wrong password confirmation
@@ -23,7 +23,7 @@ Feature: As a visitor
     And I fill in "Email" with "visitor2@gmail.com"
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "qqqqqqq"
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Password confirmation doesn't match Password"
 
   Scenario: A visitor cannot register with an existing username
@@ -32,7 +32,7 @@ Feature: As a visitor
     And I fill in "Email" with "doubled_user@gmail.com"
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Username has already been taken"
 
   Scenario: Email must not be duplicate
@@ -40,7 +40,7 @@ Feature: As a visitor
     And I fill in "Email" with "daniel@gmail.com"
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Email has already been taken"
 
   Scenario: Password must not be blank
@@ -48,7 +48,7 @@ Feature: As a visitor
     And I fill in "Email" with "testperson@gmail.com"
     And I fill in "Password" with ""
     And I fill in "Password confirmation" with ""
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Password can't be blank"
 
   Scenario: Email must not be blank
@@ -56,7 +56,7 @@ Feature: As a visitor
     And I fill in "Email" with ""
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Email can't be blank"
 
   Scenario: Email must be valid
@@ -65,7 +65,7 @@ Feature: As a visitor
     And I fill in "Email" with "123.123"
     And I fill in "Password" with "12345678"
     And I fill in "Password confirmation" with "12345678"
-    And I click "Sign up"
+    And I click "Register"
     Then I should see "Email is invalid"
 
   Scenario: Log in successfully with an existing account
