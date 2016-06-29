@@ -83,7 +83,8 @@ Feature: As a visitor
     Then I should be on the "login page"
 
   Scenario: User is able to sign out
-    Given I am signed in
+    Given I am logged-in as "Calle"
+    And I am on the "home page"
     Then I should not see "Login"
     And I should not see "Sign up"
     And I click "Sign out"

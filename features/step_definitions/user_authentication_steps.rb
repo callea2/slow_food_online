@@ -4,12 +4,7 @@ Given(/^the following users are registered in the system$/) do |table|
   end
 end
 
-Given(/^I am signed in$/) do
-  steps %Q{
-    Given I am on the "login page"
-    And I fill in "Email" with "calle@gmail.com"
-    And I fill in "Password" with "password"
-    And I click "Log in"
-    Then I should be on the "home page"
-  }
+Given(/^I am logged\-in as "([^"]*)"$/) do |name|
+  user = User.find_by(username: name)
+  login_as(user, scope: :user)
 end
