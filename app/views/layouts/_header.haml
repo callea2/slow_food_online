@@ -5,8 +5,11 @@
   %ul.inline-list
     %li= link_to 'Home', root_path
   %ul.inline-list.hide-for-small-only.account-action
-    %li= link_to 'Login', '/users/sign_in'
-    %li= link_to 'Sign up', '/users/sign_up'
+    - if user_signed_in?
+      %li= link_to "Sign out", destroy_user_session_path, method: :delete
+    - else
+      %li= link_to 'Login', '/users/sign_in'
+      %li= link_to 'Sign up', '/users/sign_up'
 
   -#   %li
   -#     %a{"data-reveal-id" => "myModal", :href => "#"} Login
@@ -15,7 +18,7 @@
   -# %a.account.hide-for-medium-up{"data-reveal-id" => "myModal", :href => "#"}
   -#   %i.fi-unlock
 
-/ modal content
+-#/ modal content
 -# #myModal.reveal-modal{"aria-hidden" => "true", "aria-labelledby" => "login or sign up", "data-reveal" => "", :role => "dialog"}
 -#   .row
 -#     .large-6.columns.auth-plain

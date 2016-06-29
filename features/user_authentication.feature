@@ -81,3 +81,11 @@ Feature: As a visitor
     And I fill in "Password" with "wrong_password"
     And I click "Log in"
     Then I should be on the "login page"
+
+  Scenario: User is able to sign out
+    Given I am signed in
+    Then I should not see "Login"
+    And I should not see "Sign up"
+    And I click "Sign out"
+    Then I should see "Login"
+    And I should see "Sign up"
