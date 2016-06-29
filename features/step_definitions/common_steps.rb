@@ -8,13 +8,17 @@ Given(/^I am on the "([^"]*)"$/) do |page|
       visit new_user_registration_path
     when 'Forgot password page' then
       visit new_user_password_path
-    when "dish list page" then
+    when 'dish list page' then
       visit dishes_path
   end
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
   expect(page).to have_text(text)
+end
+
+And(/^I should not see "([^"]*)"$/) do |text|
+  expect(page).not_to have_text(text)
 end
 
 Then(/^I should see the "([^"]*)"$/) do |id|
@@ -36,7 +40,12 @@ end
 Given(/^the following restaurants exist$/) do |table|
   table.hashes.each do |restaurant|
     category = RestaurantCategory.find_by(title: restaurant[:category])
-    FactoryGirl.create(:restaurant, name: restaurant[:name], restaurant_category: category)
+    rest = FactoryGirl.build(:restaurant,
+    name: restaurant[:name],
+    restaurant_category: category,
+    latitude: restaurant[:latitude],
+    longitude: restaurant[:longitude])
+    rest.save(validate: false)
   end
 end
 
@@ -49,7 +58,6 @@ When(/^I click "([^"]*)"$/) do |value|
 end
 
 When(/^I click the "([^"]*)" link$/) do |link|
-  Capybara.default_wait_time = 120
   find_link(link).trigger('click')
 end
 

@@ -2,6 +2,7 @@ require 'coveralls'
 Coveralls.wear_merged!('rails')
 require 'cucumber/rails'
 require 'capybara/poltergeist'
+require 'capybara-screenshot/cucumber'
 
 ActionController::Base.allow_rescue = false
 
@@ -12,5 +13,13 @@ rescue NameError
 end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Capybara.javascript_driver = :poltergeist
-Capybara.default_max_wait_time = 120
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app,
+                                    js_errors: false)
+end
+
+  Capybara.javascript_driver = :poltergeist
+  Capybara.default_max_wait_time = 120
+
+
+
