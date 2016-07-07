@@ -9,6 +9,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include Shoulda::Matchers::ActiveRecord, type: :model
+  config.include FactoryGirl::Syntax::Methods, type: :request
   config.include ResponseJSON, type: :request
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true

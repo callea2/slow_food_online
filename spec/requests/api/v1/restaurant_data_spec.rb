@@ -4,11 +4,11 @@ RSpec.describe 'Restaurant Data', type: :request do
 
   describe 'GET /api/v1/restaurant_data' do
 
-    let!(:cat) { RestaurantCategory.create(title: 'Thai') }
-    let!(:cat2) { RestaurantCategory.create(title: 'Italian') }
-    let!(:restaurant) { Restaurant.create(name: 'Thai 1', restaurant_category: cat) }
-    let!(:restaurant2) { Restaurant.create(name: 'Thai 2', restaurant_category: cat) }
-    let!(:restaurant3) { Restaurant.create(name: 'Italian Dining', restaurant_category: cat2) }
+    let!(:cat) { FactoryGirl.create(:restaurant_category, title: 'Thai') }
+    let!(:cat2) { FactoryGirl.create(:restaurant_category, title: 'Italian') }
+    let!(:restaurant) { FactoryGirl.create(:restaurant, name: 'Thai 1', restaurant_category: cat) }
+    let!(:restaurant2) { FactoryGirl.create(:restaurant, name: 'Thai 2', restaurant_category: cat) }
+    let!(:restaurant3) { FactoryGirl.create(:restaurant, name: 'Italian Dining', restaurant_category: cat2) }
 
     it 'gets 2 thai restaurants' do
       get '/api/v1/restaurant_data', cat: 'Thai'
