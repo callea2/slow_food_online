@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include DeviseTokenAuth::Concerns::User
   PERMITTED_ROLES = %w(customer admin restaurant_owner)
 
   # Include default devise modules. Others available are:

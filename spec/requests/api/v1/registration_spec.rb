@@ -22,7 +22,7 @@ describe 'User Registrtion' do
       end
 
       it 'with an invalid email returns error message' do
-        post '/api/v1/auth', {email: 'real@user.com',
+        post '/api/v1/auth', {email: 'real@user',
                               password: 'password',
                               password_confirmation: 'password'}, headers
         expect(response_json['errors']['email']).to eq(['is not an email'])
